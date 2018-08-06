@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">nwsapp</string>
+    <string name="city_state_holder">%s, %s</string>
+</resources>
