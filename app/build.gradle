@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "org.osii.nwsapp"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1_000_000
+        versionName "0.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    final SUPPORT_VER = "27.1.1"
+    final RETROFIT_VERSION = "2.4.0"
+    final DAGGER_VER = "2.15"
+    final RX_BINDING = "2.1.1"
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "com.android.support:appcompat-v7:$SUPPORT_VER"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation 'org.jetbrains.anko:anko-commons:0.10.3'
+
+    implementation "com.google.dagger:dagger:$DAGGER_VER"
+    implementation "com.google.dagger:dagger-android:$DAGGER_VER"
+    implementation "com.google.dagger:dagger-android-support:$DAGGER_VER"
+    kapt "com.google.dagger:dagger-compiler:$DAGGER_VER"
+    kapt "com.google.dagger:dagger-android-processor:$DAGGER_VER"
+
+    //RETROFIT
+    implementation "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
+    implementation "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$RETROFIT_VERSION"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.16'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+    implementation 'com.jakewharton.rxrelay2:rxrelay:2.0.0'
+    implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$RX_BINDING"
+    implementation "com.jakewharton.rxbinding2:rxbinding-support-v4:$RX_BINDING"
+
+    implementation 'com.jakewharton.timber:timber:4.5.1'
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
