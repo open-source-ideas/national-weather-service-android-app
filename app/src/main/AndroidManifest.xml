@@ -24,6 +24,6 @@
             android:theme="@style/AppTheme"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCE951HIm-c1NW7mGtD6pcooABLD7U9Sis"/>
+            android:value="INSERT-API-KEY-HERE"/>
     </application>
 </manifest>
