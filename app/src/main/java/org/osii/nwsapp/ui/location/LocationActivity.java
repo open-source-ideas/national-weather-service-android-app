@@ -68,6 +68,11 @@ public class LocationActivity extends BaseActivity implements LocationMvpView, P
                 Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void showLocations(){
+
+    }
+
 
     //Temporary helper for formatting information about the place to display
     private static Spanned formatPlaceDetails (Resources res, CharSequence name, String id, LatLng latLong){
